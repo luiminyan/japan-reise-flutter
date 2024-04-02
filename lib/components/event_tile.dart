@@ -7,17 +7,16 @@ class EventTile extends StatelessWidget {
   // path to string
   final String imagePath;
   final String rating;
-  final void Function()? details;   //?: nullable
+  final void Function()? details; //?: nullable
 
   // constructor
-  const EventTile({
-    super.key,
-    required this.name,
-    required this.price,
-    required this.imagePath,
-    required this.rating,
-    required this.details
-  });
+  const EventTile(
+      {super.key,
+      required this.name,
+      required this.price,
+      required this.imagePath,
+      required this.rating,
+      required this.details});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,6 @@ class EventTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color.fromARGB(255, 61, 91, 212),
         borderRadius: BorderRadius.circular(20),
-
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -38,39 +36,28 @@ class EventTile extends StatelessWidget {
           GestureDetector(
               onTap: details,
               child: Image.asset(
-                  imagePath,
-                  height: 200,
-              )
-          ),
+                imagePath,
+                height: 200,
+              )),
           Text(
             name,
-            style: TextStyle(
-                fontSize: 15,
-                color: Colors.white
-            ),
+            style: TextStyle(fontSize: 15, color: Colors.white),
           ),
           SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                price,
-                style: TextStyle(
-                  color: Colors.white
-                )
-              ),
+              Text(price, style: TextStyle(color: Colors.white)),
               Row(
                 children: [
                   Text(
-                      rating,
-                      style: TextStyle(
-                        color: Colors.white
-                      ),
+                    rating,
+                    style: TextStyle(color: Colors.white),
                   ),
                   Icon(
-                      Icons.star,
-                      size: 15,
-                      color: Color.fromARGB(255, 254, 198, 6),
+                    Icons.star,
+                    size: 15,
+                    color: Color.fromARGB(255, 254, 198, 6),
                   ),
                 ],
               )
